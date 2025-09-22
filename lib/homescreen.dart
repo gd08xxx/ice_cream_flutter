@@ -11,10 +11,10 @@ class SlowScrollPhysics extends PageScrollPhysics {
 
   @override
   SpringDescription get spring => const SpringDescription(
-        mass: 2.5, // Increased mass for slower transitions
-        stiffness: 300, // Decreased stiffness for smoother transitions
-        damping: 100, // Increased damping for less bouncing
-      );
+    mass: 2.5, // Increased mass for slower transitions
+    stiffness: 300, // Decreased stiffness for smoother transitions
+    damping: 100, // Increased damping for less bouncing
+  );
 }
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +25,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController _searchController = TextEditingController();
   final PageController _pageController = PageController(viewportFraction: 1);
   int _currentIndex = 0;
 
@@ -84,53 +83,13 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               // Clean Title
               Text(
-                'Bliss',
+                'Frosty',
                 style: TextStyle(
                   color: Colors.pink.shade600,
-                  fontSize: 28,
+                  fontSize: 34,
                   fontWeight: FontWeight.w800,
                   letterSpacing: -0.5,
-                  fontFamily: 'Jaya Baru',
-                ),
-              ),
-              const Spacer(),
-              // Elegant Search Bar
-              Container(
-                width: 200,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Colors.pink[25],
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: Colors.pink.shade100.withOpacity(0.5),
-                    width: 1,
-                  ),
-                ),
-                child: TextField(
-                  controller: _searchController,
-                  style: TextStyle(
-                    color: Colors.pink.shade600,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: 'Search...',
-                    hintStyle: TextStyle(
-                      color: Colors.pink.shade300,
-                      fontSize: 14,
-                      fontFamily: 'Jaya Baru',
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search_rounded,
-                      color: Colors.pink.shade300,
-                      size: 18,
-                    ),
-                    border: InputBorder.none,
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 10,
-                    ),
-                  ),
+                  fontFamily: 'Manrope',
                 ),
               ),
             ],
@@ -150,10 +109,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   icecreams[_currentIndex]['title'],
                   style: TextStyle(
                     color: Colors.grey.shade800,
-                    fontSize: 32,
+                    fontSize: 40,
                     fontWeight: FontWeight.w700,
                     letterSpacing: -0.5,
-                    fontFamily: 'Jaya Baru',
+                    fontFamily: 'Manrope',
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -161,10 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   icecreams[_currentIndex]['desc'],
                   style: TextStyle(
                     color: Colors.grey.shade500,
-                    fontSize: 16,
+                    fontSize: 20,
                     fontWeight: FontWeight.w400,
                     letterSpacing: 0.2,
-                    fontFamily: 'Jaya Baru',
+                    fontFamily: 'Manrope',
                   ),
                 ),
               ],
@@ -331,7 +290,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    _searchController.dispose();
     _pageController.dispose();
     super.dispose();
   }
